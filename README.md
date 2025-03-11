@@ -1,11 +1,12 @@
 # uni5nd
 Freelancing Platform 
-
-npm install
+<hr>
+npm install <br>
 npm run dev
 
-example .env
+<hr>
+example .env 
 
-PORT=5000
-MONGO_URI=mongodb://localhost:xxxxx/freelance_platform
-SESSION_SECRET=givesomerandomtext
+PORT=5000 <br>
+MONGO_URI=mongodb://localhost:xxxxx/freelance_platform <br>
+SESSION_SECRET=givesomerandomtext <br>
