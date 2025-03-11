@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@1.5.3/dist/flowbite.min.css">
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <div class="w-full max-w-lg bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-center mb-4">Profile</h1>
+
+        <% if (!editMode) { %>
+            <!-- View Mode -->
+            <div class="border rounded-lg p-4 shadow">
+                <p><strong>Name:</strong> <%= user.name %></p>
+                <p><strong>Email:</strong> <%= user.email %></p>
+                <p><strong>Role:</strong> <%= user.role %></p>
+            </div>
+
+            <!-- Edit Button (redirects to ?edit=true) -->
+            <a href="/profile?edit=true" class="mt-4 block bg-blue-500 text-white text-center py-2 rounded">Edit Profile</a>
+
+        <% } else { %>
+            <!-- Edit Mode -->
+            <form action="/profile" method="POST" class="border rounded-lg p-4 shadow">
+                <label class="block font-bold">Name:</label>
+                <input type="text" name="name" value="<%= user.name %>" class="border p-2 w-full rounded" required />
+
+                <label class="block mt-2 font-bold">Email:</label>
+                <input type="email" name="email" value="<%= user.email %>" class="border p-2 w-full rounded" required />
+
+                <div class="mt-4 flex justify-between">
+                    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Save Changes</button>
+                    <a href="/profile" class="text-gray-600 px-4 py-2 rounded border">Cancel</a>
+                </div>
+            </form>
+        <% } %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.3/dist/flowbite.min.js"></script>
+</body>
+</html>

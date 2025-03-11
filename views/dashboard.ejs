@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Uni5nd</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white h-screen shadow-md p-4">
+        <h2 class="text-xl font-bold text-gray-800 mb-6">Dashboard</h2>
+        <ul>
+            <li class="mb-4">
+                <a href="/dashboard" class="block px-4 py-2 bg-blue-600 text-white rounded">Dashboard</a>
+            </li>
+            <li class="mb-4">
+                <a href="/profile" class="block px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded">Profile</a>
+            </li>
+            <li class="mb-4">
+                <a href="/projects" class="block px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded">My Projects</a>
+            </li>
+            <li class="mb-4">
+                <a href="/messages" class="block px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded">Messages</a>
+            </li>
+            <li>
+                <a href="/auth/logout" class="block px-4 py-2 bg-red-600 text-white rounded">Logout</a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+        <h1 class="text-2xl font-bold">Welcome, <%= user.name %>!</h1>
+        
+        <!-- Dashboard Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+            <div class="bg-white p-4 shadow-md rounded">
+                <h3 class="text-lg font-semibold">Total Projects</h3>
+                <p class="text-2xl font-bold">5</p>
+            </div>
+            <div class="bg-white p-4 shadow-md rounded">
+                <h3 class="text-lg font-semibold">Pending Offers</h3>
+                <p class="text-2xl font-bold">2</p>
+            </div>
+            <div class="bg-white p-4 shadow-md rounded">
+                <h3 class="text-lg font-semibold">Messages</h3>
+                <p class="text-2xl font-bold">3 Unread</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+</html>
